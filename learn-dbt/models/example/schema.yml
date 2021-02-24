@@ -1,0 +1,31 @@
+
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: my_second_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: cumulative_orders_by_date
+      description: "A cumulative_orders_by_date dbt model"
+      columns:
+          - name: order_date
+            description: "The date for orders for this table"
+          - name: date_total
+            description: "The total amount of orders for the day"
+          - name: cumulative_total
+            description: "The cumulative total amount of orders for the day"
+            
