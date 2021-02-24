@@ -28,4 +28,5 @@ models:
             description: "The total amount of orders for the day"
           - name: cumulative_total
             description: "The cumulative total amount of orders for the day"
-            
+    - name: incremental_time
+    - name: dates            
