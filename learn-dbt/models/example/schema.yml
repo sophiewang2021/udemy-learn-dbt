@@ -11,6 +11,7 @@ models:
                 - unique
                 - not_null
 
+
     - name: my_second_dbt_model
       description: "A starter dbt model"
       columns:
@@ -19,6 +20,20 @@ models:
             tests:
                 - unique
                 - not_null
+                - relationships:
+                    to: ref('my_first_dbt_model')
+                    field: id
+    - name: my_second_dbt_model_same
+      description: "A starter dbt model same"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+                - relationships:
+                    to: ref('my_first_dbt_model')
+                    field: id    
     - name: cumulative_orders_by_date
       description: "A cumulative_orders_by_date dbt model"
       columns:
@@ -29,4 +44,6 @@ models:
           - name: cumulative_total
             description: "The cumulative total amount of orders for the day"
     - name: incremental_time
-    - name: dates            
+    - name: dates
+    
+    

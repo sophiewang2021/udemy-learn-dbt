@@ -15,12 +15,12 @@ with source_data as (
     union all
     select null as id
 
+
 )
 
-select *, {{ var('my_first_variable') }} as first_variable
+select *
 from source_data
-where id >= {{ var('my_third_variable') }} 
-
+where id IS NOT NULL
 /*
     Uncomment the line below to remove records with null `id` values
 */
